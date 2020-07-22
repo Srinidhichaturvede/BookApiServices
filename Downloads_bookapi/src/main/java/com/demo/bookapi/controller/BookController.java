@@ -29,7 +29,11 @@ public class BookController {
 	@Autowired
 	BookRepository bookRepository;
 	
-	
+	@GetMapping("/book")
+	public List<Book> getAllBooks() {
+	    return bookRepository.findAll();
+	}
+
 	
 	@PostMapping("/book")
 	public Book createBook(@Valid @RequestBody Book book) {
